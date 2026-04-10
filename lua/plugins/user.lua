@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
@@ -21,25 +19,35 @@ return {
   -- customize dashboard options
   {
     "folke/snacks.nvim",
-    opts = {
-      dashboard = {
-        preset = {
-          header = table.concat({
-            " █████  ███████ ████████ ██████   ██████ ",
-            "██   ██ ██         ██    ██   ██ ██    ██",
-            "███████ ███████    ██    ██████  ██    ██",
-            "██   ██      ██    ██    ██   ██ ██    ██",
-            "██   ██ ███████    ██    ██   ██  ██████ ",
-            "",
-            "███    ██ ██    ██ ██ ███    ███",
-            "████   ██ ██    ██ ██ ████  ████",
-            "██ ██  ██ ██    ██ ██ ██ ████ ██",
-            "██  ██ ██  ██  ██  ██ ██  ██  ██",
-            "██   ████   ████   ██ ██      ██",
-          }, "\n"),
-        },
-      },
-    },
+    opts = function(_, opts)
+      opts.dashboard.preset.header = table.concat({
+        "██████  ██    ██  ██████   ██████ ",
+        "██   ██ ██    ██ ██       ██      ",
+        "███████ ██    ██  ██████   ██████ ",
+        "██   ██ ██    ██      ██       ██ ",
+        "██   ██  ██████   ██████   ██████ ",
+        "",
+        "██████   ██████  ███████  ██████  ",
+        "██   ██ ██    ██    ███  ██    ██ ",
+        "██████  ██    ██   ███   ██    ██ ",
+        "██   ██ ██    ██  ███    ██    ██ ",
+        "██████   ██████  ███████  ██████  ",
+      }, "\n")
+      for _, key in ipairs(opts.dashboard.preset.keys or {}) do
+        if key.key == "s" then
+          key.action = "<Leader>S."
+          key.desc = "Load Session "
+          break
+        end
+      end
+      table.insert(opts.dashboard.preset.keys, {
+        key = "q",
+        action = ":qa",
+        icon = "󰈆 ",
+        desc = "Quit ",
+      })
+      return opts
+    end,
   },
 
   -- You can disable default plugins as follows:
