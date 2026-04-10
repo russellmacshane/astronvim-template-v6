@@ -14,6 +14,14 @@ return {
     config = function() require("lsp_signature").setup() end,
   },
 
+  -- tokyonight color scheme
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = { style = "night" },
+  },
+
   -- == Examples of Overriding Plugins ==
 
   -- customize dashboard options
