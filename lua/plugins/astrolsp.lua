@@ -93,6 +93,11 @@ return {
           desc = "Declaration of current symbol",
           cond = "textDocument/declaration",
         },
+        -- grr uses the snacks picker instead of the default diagnostic window
+        ["grr"] = {
+          function() require("snacks").picker.lsp_references() end,
+          desc = "Search references",
+        },
         ["<Leader>uY"] = {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
           desc = "Toggle LSP semantic highlight (buffer)",
