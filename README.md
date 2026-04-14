@@ -10,6 +10,7 @@
 6. [Customize the Opening Dashboard](https://github.com/russellmacshane/astronvim-template-v6/commit/3b342a09c08902c5cec37312aa39bb62606c599f)
 7. [grr uses snack picker instead of default diagnostic window](https://github.com/russellmacshane/astronvim-template-v6/commit/8cda571a7c6a7ca0b529275905904903665f2bc3)
 8. [Use Tokyonight Color Scheme](https://github.com/russellmacshane/astronvim-template-v6/commit/2b793815473171c5da2c56a8c7f0cedb746e423a)
+9. [Install Tailwind Community Pack](https://github.com/russellmacshane/astronvim-template-v6/commit/2bf1a3c187db56d219a798f748916a3ae0928266)
 
 ---
 
