@@ -16,7 +16,7 @@ return {
 
         -- install formatters
         "stylua",
-        "prettier",
+        "prettierd",
         "eslint_d",
 
         -- install debuggers
